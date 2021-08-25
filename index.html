@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="3">
+  <!--<meta http-equiv="refresh" content="3">-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
-
 
   <title>Frontend Mentor | Intro component with sign up form</title>
 
@@ -16,61 +14,94 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    *{
+    padding: 0;
+    margin: 0;
+    }
+
     body { background-color: hsl(0, 100%, 74%);
-      background-image: url("images/bg-intro-desktop.png") }
+      background-image: url("images/bg-intro-desktop.png");
+    color: white;
+    min-width: 375px;
+    width: 100%;
+      height: auto; }
 
-      .parent {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
+.container { display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;}
 
-.div1 { grid-area: 1 / 1 / 2 / 2; position: relative; }
-.div2 { grid-area: 1 / 2 / 2 / 3; margin-top: 120px; }
-.headertext {font-size: 50px; font-family:'Poppins'; color: white; font-weight: bold; padding-left: 150px}
-.ptext {font-size: 15px; font-family:'Poppins'; color: white; padding-left: 150px}
+.flex-block {box-sizing: border-box; width: 50%; margin-top: 10rem}
+.text-box {padding-left: 8rem; padding-right: 5rem;}
 
-.label {background-color: hsl(248, 32%, 49%); color: white; font-family:'Poppins'; text-align:center; padding: 20px 0; border-radius: 15px; width: 85%;  -webkit-box-shadow: 0px 10px #000000;
+
+.headertext {font-size: 3rem; font-family:'Poppins'; color: white; line-height: 3rem; margin-bottom: 1.5rem; font-weight: 900}
+.ptext {font-size: 1rem; font-family:'Poppins'; color: white;}
+
+.label {background-color: hsl(248, 32%, 49%); color: white; font-family:'Poppins'; border-radius: 15px; width: 75%;  -webkit-box-shadow: 0px 10px #000000;
+   -moz-box-shadow: 0px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 8px rgba(0, 0, 0, 0.15);
+       margin-bottom: 1rem; padding-top: 1rem; padding-bottom: 1rem; text-align: center;}
+
+.form-background {background-color: white; text-align: center; border-radius: 15px; width: 75%; padding-top: 1.5rem; padding-bottom: 2rem; -webkit-box-shadow: 0px 10px #000000;
    -moz-box-shadow: 0px 8px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 8px rgba(0, 0, 0, 0.15);}
-.form-background {background-color: white; text-align: center; padding: 20px 0; border-radius: 15px; width: 85%; margin-top: 25px}
-.form-input {width: 90%; border-radius: 5px; height: 50px; margin-bottom: 20px; border: 1px solid hsl(246, 25%, 77%); font-family:'Poppins'; padding-left: 25px; font-size: 15px; box-sizing: border-box;}
-.form-input:focus {outline: none !important;
-    border:1px solid black;}
-.form-button {background-color: hsl(154, 59%, 51%); color: white; font-family:'Poppins'; width: 90%; border:none; border-radius: 10px; height: 50px; font-size: 16px}
-.terms-text{color: grey; font-family:'Poppins';}
+.form-input {width: 90%; border-radius: 5px; padding-left: 2rem; margin-top: 1rem; height: 3.5rem; border: 1px solid hsl(246, 25%, 77%); font-family:'Poppins'; font-size: 1.2rem; box-sizing: border-box;}
+.form-input:focus {outline: none !important; border: 1px solid black;}
+
+.form-button {background-color: hsl(154, 59%, 51%); color: white; font-family:'Poppins'; width: 90%; border:none; border-radius: 10px; height: 3rem; font-size: 16px; margin-top: 1.5rem; margin-bottom: 1.5rem}
+.form-button:hover {background-color: hsl(154, 39%, 51%);}
+
+.terms-text{color: hsl(246, 25%, 77%); font-family:'Poppins'; font-size: 0.8rem;}
 .link {color:red; text-decoration: none;}
-.container {position:absolute; top:50%; height:10em; margin-top:-5em}
-  </style>
+.link:hover {text-decoration: underline;}
+
+
+@media screen and (max-width: 900px) {
+.container {display: flex;
+        flex-flow: column;
+        padding: 2rem 3rem 1rem 3rem;}
+
+.flex-block {margin-top: 0rem; width: 100%}
+
+.text-box {padding-left: 2rem; padding-right: 2rem; margin-bottom: 2rem; text-align: center;}
+
+.form-background {width: 100%}
+.label {width: 100%}
+
+
+}
+</style>
 </head>
 
 <body>
-  <div class="parent">
+  <main>
 
-  <div class="div1">
-    <div class="container">
-    <h1 class="headertext">Learn to code by watching others</h1>
+  <div class="container">
+
+  <div class="flex-block text-box">
+    <p class="headertext"><b>Learn to code by watching others</b></p>
     <p class="ptext">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
-    </div>
   </div>
 
-  <div class="div2">
-    <div class="label">Try it free 7 days then $20/mo. thereafter</div>
+  <div class="flex-block">
+    <div class="label"><p><b>Try it free 7</b> days then $20/mo. thereafter</p></div>
     <div class="form-background">
-    <form>
-      <input class="form-input" placeholder="First Name"></input>
-      <input class="form-input" placeholder="Last Name"></input>
-      <input class="form-input" placeholder="Email Address"></input>
-      <input class="form-input" placeholder="Password" type="password"></input>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+      <input class="form-input" type="text" placeholder="First Name" name="fname" required></input>
+      <input class="form-input" placeholder="Last Name" required></input>
+      <input class="form-input" placeholder="Email Address" required></input>
+      <input class="form-input" placeholder="Password" type="password" required></input>
+      <button type="submit" value="Submit" class="form-button">CLAIM YOUR FREE TRIAL</button>
     </form>
-    <button class="form-button">CLAIM YOUR FREE TRIAL</button>
     <p class="terms-text">By clicking the button you agree to our <a class="link" href="google.com">Terms and Services</a></p>
-  </div>
     </div>
+  </div>
 
   </div>
+
+  </main>
 
   <footer>
    <!-- <p class="attribution">
